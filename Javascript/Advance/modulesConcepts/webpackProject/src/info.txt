@@ -1,0 +1,10 @@
+The src (source) folder contains the original, unprocessed code written by developers. This includes:​
+
+- JavaScript or TypeScript files
+- CSS or SCSS stylesheets
+- HTML templates
+- Images and other assets used during development​
+
+
+These files are typically written using modern syntax and tools, such as ES6+ JavaScript, JSX for React, or SCSS for styling. 
+They are not optimized for production and often require processing before deployment.

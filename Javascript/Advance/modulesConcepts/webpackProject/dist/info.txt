@@ -1,0 +1,9 @@
+The dist (distribution) folder contains the processed, optimized code ready for deployment to production. This includes:​
+
+- Bundled and minified JavaScript files
+- Compiled CSS files
+- Optimized images and other assets
+- The final index.html file​
+
+Tools like Webpack, Babel, or other build systems process the contents of the src folder and output the results into the dist folder. 
+This ensures that the deployed application is efficient and compatible with various browsers.
