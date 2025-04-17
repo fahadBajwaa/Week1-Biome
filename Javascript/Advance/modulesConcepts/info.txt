@@ -1,0 +1,49 @@
+// Advance Concepts 
+
+// 🟢 Modules: Import/Export, Module Bundling (Webpack)  🟢 
+
+This folder contain some files used ffor covering the concepts related to "Modules".
+
+In ES6 Modules,we have: 🟥 (standardized module system, allowing developers to organize code into reusable pieces)
+
+- Named Exports
+- Default Exports
+- Combined Named and Default Exports
+
+Module Binding with Webpack: 🟥
+
+In modern web development, applications often consist of multiple modules. 
+Browsers, however, don't natively support module loading in all scenarios, especially when it comes to older browsers. 
+This is where module bundlers like Webpack come into play.
+
+
+What is Webpack? 🟥
+
+Webpack is a "static module bundler" for modern Javascript applications. When Webpack processes applications, it internally builds a "dependancy Graph" from one or more entry points,
+then combines every module a project needs into one or more bundles, which are "static assets" to serve the content from.
+
+- Basic Webpack Setup  🟢
+
+1. Intialize project
+
+    " npm init -y "
+
+2. Install Webpack and its CLI:
+
+    " npm Install --save-dev webpack webpack-cli "  // --save-dev: specifies that these packages are development dependencies. This means they are necessary for the development and build processes but are not required in the production environment.​
+
+3. Project Structure:
+
+        webpackProject/
+        ├── src/
+        │   └── index.js
+        │   └── greet.js           
+        └── dist/
+        │   └── index.html
+        └── webpack.config.js
+
+4. Create webpack.config.js:
+
+5. Build the bundle:
+
+    " npx webpack "    // npx: node package execute , execute Node.js packages directly from the "npm registry" without requiring a global installation.
