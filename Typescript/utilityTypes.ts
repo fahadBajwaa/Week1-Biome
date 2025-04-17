@@ -36,6 +36,8 @@ const person1: PartialPerson = {
     // age and address are optional
 };
 
+console.log(person1);
+
 
 // 2. Pick<T, K>: ​🟥
 
@@ -48,6 +50,8 @@ const person2: NameAndAge = {
     age: 23,
     // address and email are omitted
 };
+
+console.log(person2);
 
 
 // 3. Omit<T, K> : ​🟥
@@ -63,6 +67,8 @@ const person3: PersonWithoutAddress = {
     // address is omitted
 };
 
+console.log(person3);
+
 
 // 4. Required<T>: ​🟥
 
@@ -77,6 +83,8 @@ const person4: CompletePerson = {
     email: "fahad@example.com",
     // All properties must be provided
 };
+
+console.log(person4);
 
 
 // 5. Readonly<T>: ​🟥
@@ -94,6 +102,8 @@ const person5: ReadonlyPerson = {
 
 // person5.name = "Ali"; // Error: Cannot assign to 'name' because it is a read-only property
 
+console.log(person5);
+
 
 // 6. Record<K, T> : ​🟥
 
@@ -107,6 +117,8 @@ const permissions: RolePermissions = {
     user: ["read", "update"],
     guest: ["read"],
 };
+
+console.log(permissions);
 
 
 // 7. Exclude<T, U> : ​🟥

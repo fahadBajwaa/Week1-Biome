@@ -48,8 +48,9 @@ class BankAccount {
         return this.accountId;
     }
 }
-
 const account = new BankAccount("ABC123", 1000);
+// console.log(account.balance) // Not accessible
+
 account.deposit(500);
 console.log(account.getBalance()); // 1500
 console.log(account.getAccountId()); // ABC123

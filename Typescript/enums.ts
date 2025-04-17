@@ -91,7 +91,7 @@ console.log(ComputedEnum.B); // Output: 20
 
 // 6. Reverse Mapping (Only with Numeric Enums): ​🟥
 
-// TypeScript provides reverse mapping for numeric enums.
+// TypeScript provides reverse mapping for numeric enums. (name->num, num->name)
 
 enum Weekday {
   Monday,
@@ -99,11 +99,25 @@ enum Weekday {
   Wednesday
 }
 
-let dayName: string = Weekday[0]; // "Monday"
+//Behind the scenes:
+// const Weekday = {
+//   0: "Monday",
+//   1: "Tuesday",
+//   2: "Wednesday",
+//   Monday: 0,
+//   Tuesday: 1,
+//   Wednesday: 2
+// };
+
+
+let dayName: string = Weekday[0]; // "Monday"  
 let dayNumber: number = Weekday["Tuesday"]; // 1
 
 console.log(dayName);   // Output: "Monday"
 console.log(dayNumber); // Output: 1
+
+console.log(Weekday.Tuesday); // Output: 1
+
 
 
 // 7. Enums as Function Parameters: ​🟥

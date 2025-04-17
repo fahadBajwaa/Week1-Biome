@@ -17,6 +17,8 @@ let moveDirection: Direction = "left"; // Valid assignment
 moveDirection = "right";               // Valid assignment
 // moveDirection = "up";               // Error: Type '"up"' is not assignable to type 'Direction'
 
+// let ID: 1;
+// ID = 2;
 
 // 2. Union Types: ​🟥
 
@@ -82,6 +84,7 @@ function getTrafficLightAction(light: TrafficLight): string {
 }
 
 console.log(getTrafficLightAction("green")); // Output: Go
+// console.log(getTrafficLightAction("")); 
 
 
 // Example 2: Union Types with Arrays: ​🟥
@@ -128,9 +131,9 @@ console.log("Full Employee:", fullEmployee);
 type Admin = { role: "admin"; permissions: string[] };
 type User = { role: "user"; subscription: string };
 
-type Account = Admin | User;
+type Account = Admin | User; // Union Type
 
-function isAdmin(account: Account): account is Admin {
+function isAdmin(account: Account): account is Admin {    // If this function returns true, then treat account as an Admin in that scope.
     return account.role === "admin";
 }
 

@@ -1,6 +1,4 @@
 // 🟢 TypeScript Basics: Types, Type Inference, and Type Aliases 🟢
-
-
 // Explicit Types: Defining variable types explicitly ensures that variables hold only the intended type of data, reducing errors.​
 // Type Inference: TypeScript can automatically determine the type of a variable based on its initial value, simplifying code while maintaining type safety.​
 // Type Aliases: Creating custom type aliases allows for more readable and maintainable code, especially when dealing with complex types.​
@@ -11,157 +9,66 @@
 // Readonly Properties: Properties that cannot be modified after the object is created, ensuring data integrity.​
 // Tuple Types: Arrays with a fixed number of elements where each element can have a different type, useful for representing structured data.​
 // Enum Types: Defines a set of named constants, making code more readable and less error-prone when dealing with a set of related values.
-
-
-
 // 1. Explicit Types: ​🟥
-
 // Defining variable types explicitly ensures type safety and clarity.
-
-let myName: string = "Fahad";       // 'myName' is of type string
-let age: number = 23;               // 'age' is of type number
-let isActive: boolean = true;       // 'isActive' is of type boolean
-
-console.log("Name:", myName);       // Output: Name: Fahad
-console.log("Age:", age);           // Output: Age: 23
-console.log("Active:", isActive);   // Output: Active: true
-
-
+var myName = "Fahad"; // 'myName' is of type string
+var age = 23; // 'age' is of type number
+var isActive = true; // 'isActive' is of type boolean
+console.log("Name:", myName); // Output: Name: Fahad
+console.log("Age:", age); // Output: Age: 23
+console.log("Active:", isActive); // Output: Active: true
 // 2. Type Inference: ​🟥
-
 // TypeScript can infer types based on the assigned value.
-
-let city = "Rawalpindi"; // TypeScript infers 'city' as string
+var city = "Rawalpindi"; // TypeScript infers 'city' as string
 // city = 100;            // Error: Type 'number' is not assignable to type 'string'
 console.log("City:", city); // Output: City: Rawalpindi
-
-
-// 3. Type Aliases: ​🟥
-
-// Creating custom type aliases for complex or reusable types.
-
-type ID = number;
-let userId: ID = 123;
+var userId = 123;
 console.log(userId);
-
-
-type User = { // User type has an object with these properties
-  id: number;
-  name: string;
-};
-
-let user1: User = { id: 1, name: "Fahad" };
-
-console.log("User ID:", user1.id);     // Output: User ID: 1
+var user1 = { id: 1, name: "Fahad" };
+console.log("User ID:", user1.id); // Output: User ID: 1
 console.log("User Name:", user1.name); // Output: User Name: Fahad
-
-
-// 4. Union Types: ​🟥
-
-// Variables that can hold more than one type.
-
-type Status = "active" | "inactive";
-
-let accountStatus: Status = "active";
+var accountStatus = "active";
 // accountStatus = "pending"; // Error: Type '"pending"' is not assignable to type 'Status'
 console.log("Account Status:", accountStatus); // Output: Account Status: active
-
-let variable: Number | String;
+var variable;
 variable = 12345;
 variable = "Fahad Bajwa";
 // variable = true; // Type 'boolean' is not assignable to type 'String | Number'.
-console.log(variable)
-
-// 5. Intersection Types: ​🟥
-
-// Combining multiple types into one.
-
-type ContactInfo = {
-  email: string;
-  phone: string;
+console.log(variable);
+var employee1 = {
+    id: 2,
+    name: "Fahad",
+    email: "fahad@example.com",
+    phone: "123-456-7890"
 };
-
-type Employee = User & ContactInfo; // Here we combined 2 types into 1.
-
-let employee1: Employee = {
-  id: 2,
-  name: "Fahad",
-  email: "fahad@example.com",
-  phone: "123-456-7890"
-};
-
 console.log("Employee:", employee1);
-
-
-// 6. Function Types: ​🟥
-
-// Defining types for function parameters and return values.
-
-type GreetFunction = (name: string) => string;
-
-const greet: GreetFunction = (name) => `Hello, ${name}!`;
-
+var greet = function (name) { return "Hello, ".concat(name, "!"); };
 console.log(greet("Fahad")); // Output: Hello, Fahad!
-// console.log(greet(12)); // Error: Argument of type 'number' is not assignable to parameter of type 'string'
-
-
-// 7. Optional Properties: ​🟥
-
-// Properties that may or may not be present in an object.
-
-type Product = {
-  id: number;
-  name: string;
-  description?: string; // Optional property
-};
-
-let product1: Product = { id: 101, name: "Laptop" }; // working without description
-let product2: Product = { id: 102, name: "Smartphone", description: "Latest model" };
-
+var product1 = { id: 101, name: "Laptop" }; // working without description
+var product2 = { id: 102, name: "Smartphone", description: "Latest model" };
 console.log("Product 1:", product1);
 console.log("Product 2:", product2);
-
-
-// 8. Readonly Properties: ​🟥
-
-// Properties that cannot be modified after initialization.
-
-type ImmutablePoint = {
-  readonly x: number;
-  readonly y: number;
-};
-
-let point: ImmutablePoint = { x: 10, y: 20 };
+var point = { x: 10, y: 20 };
 // point.x = 15; // Error: Cannot assign to 'x' because it is a read-only property
 console.log("Point:", point);
-
-
 // 9. Tuple Types: ​🟥
-
 // Arrays with fixed number of elements and specific types.
-
-let person: [string, number] = ["Fahad", 23];
+var person = ["Fahad", 23];
 console.log("Person Tuple:", person);
-
-
 // 10. Enum Types: ​🟥
-
 // Defining a set of named constants. They are like labels for values.
-
-enum Direction {
-  Up,
-  Down,
-  Left,
-  Right
-}
-
+var Direction;
+(function (Direction) {
+    Direction[Direction["Up"] = 0] = "Up";
+    Direction[Direction["Down"] = 1] = "Down";
+    Direction[Direction["Left"] = 2] = "Left";
+    Direction[Direction["Right"] = 3] = "Right";
+})(Direction || (Direction = {}));
 // enum Direction {
 //   Up = "UP",
 //   Down = "DOWN",
 //   Left= "LEFT",
 //   Right = "RIGHT"
 // }
-
-let move: Direction = Direction.Up;
+var move = Direction.Up;
 console.log("Move Direction:", move); // Output: Move Direction: 0, By default, TypeScript assigns numeric values, starting from 0
-
