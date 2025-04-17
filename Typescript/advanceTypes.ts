@@ -142,7 +142,7 @@ function getAccountInfo(account: Account): void {
         console.log("Admin Permissions:", account.permissions);
     } else {
         console.log("User Subscription:", account.subscription);
-        console.log("User Subscription:", account.subscription);
+        console.log("My Subscription:", account.subscription);
 
     }
 }
