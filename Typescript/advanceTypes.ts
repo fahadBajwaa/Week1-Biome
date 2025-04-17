@@ -147,8 +147,8 @@ function getAccountInfo(account: Account): void {
     }
 }
 
-const adminAccount: Account = { role: "admin", permissions: ["read", "write"] };
-const userAccount: Account = { role: "user", subscription: "Enterprise" };
+let adminAcc: Account = { role: "admin", permissions: ["read", "write"] };
+let userAccount: Account = { role: "user", subscription: "Enterprise" };
 
-getAccountInfo(adminAccount); // Output: Admin Permissions: [ 'read', 'write' ]
+getAccountInfo(adminAcc); // Output: Admin Permissions: [ 'read', 'write' ]
 getAccountInfo(userAccount);  // Output: User Subscription: premium
